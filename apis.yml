@@ -1,0 +1,68 @@
+aid: contrast-security
+name: Contrast Security
+description: >-
+  Contrast Security is an application security platform that uses
+  instrumentation-based agents to provide Interactive Application Security
+  Testing (IAST), Runtime Application Self-Protection (RASP), and Software
+  Composition Analysis (SCA) across Java, .NET, Node.js, Python, PHP, Go,
+  and Ruby applications. The platform identifies, prioritizes, and defends
+  against vulnerabilities and attacks in real time from inside running
+  applications. Contrast's REST API enables programmatic access to
+  TeamServer applications, libraries, vulnerabilities, and traces,
+  authenticated via API key plus Authorization header (Base64 of
+  username:service_key) and an Organization ID.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Application Security
+  - AppSec
+  - IAST
+  - RASP
+  - SCA
+  - DevSecOps
+  - Runtime Protection
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/contrast-security/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: contrast-security:rest-api
+    name: Contrast TeamServer REST API
+    description: >-
+      REST API for interacting with Contrast TeamServer to manage
+      applications, libraries, vulnerabilities, traces, servers, agents,
+      and organization settings. Requires an API key, Authorization
+      header formed as Base64(username:service_key), and the
+      Organization ID in the request path.
+    humanURL: https://api.contrastsecurity.com/
+    baseURL: https://app.contrastsecurity.com/Contrast/api/ng
+    tags:
+      - Application Security
+      - IAST
+      - RASP
+      - SCA
+      - Vulnerabilities
+    properties:
+      - type: Documentation
+        url: https://api.contrastsecurity.com/
+      - type: REST API Docs
+        url: https://app.contrastsecurity.com/Contrast/docs/restapi/index.html
+      - type: GitHub
+        url: https://github.com/Contrast-Security-OSS/contrast-teamserver-api-docs
+      - type: Personal Keys
+        url: https://docs.contrastsecurity.com/en/personal-keys.html
+common:
+  - type: Website
+    url: https://www.contrastsecurity.com
+  - type: Documentation
+    url: https://docs.contrastsecurity.com
+  - type: API Docs
+    url: https://api.contrastsecurity.com/
+  - type: Pricing
+    url: https://www.contrastsecurity.com/contact-sales
+  - type: Sign Up
+    url: https://www.contrastsecurity.com/contrast-free-tools
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
