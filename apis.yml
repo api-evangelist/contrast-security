@@ -61,7 +61,7 @@ common:
     url: https://api.contrastsecurity.com/
   - type: Pricing
     url: https://www.contrastsecurity.com/contact-sales
-  - type: Sign Up
+  - type: SignUp
     url: https://www.contrastsecurity.com/contrast-free-tools
 maintainers:
   - FN: Kin Lane
