@@ -53,6 +53,8 @@ apis:
       - type: Personal Keys
         url: https://docs.contrastsecurity.com/en/personal-keys.html
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/contrast-security
   - type: Website
     url: https://www.contrastsecurity.com
   - type: Documentation
