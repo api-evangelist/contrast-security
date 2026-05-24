@@ -65,6 +65,8 @@ common:
     url: https://www.contrastsecurity.com/contact-sales
   - type: SignUp
     url: https://www.contrastsecurity.com/contrast-free-tools
+  - type: LLMsTxt
+    url: https://api.contrastsecurity.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
