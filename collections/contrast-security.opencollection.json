@@ -1,0 +1,236 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Contrast Assess API",
+    "version": "4.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API-Key",
+      "value": "{{API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets an organization by ID"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Vulnerabilities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get vulnerabilities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/vulnerabilities",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns all vulnerabilities from the applications your user role has access to in the organization."
+        },
+        {
+          "info": {
+            "name": "Get vulnerability",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/vulnerabilities/:vulnerabilityId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "vulnerabilityId",
+                "value": "UPF2-Z0YH-O121-IWBX",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets a vulnerability by ID."
+        },
+        {
+          "info": {
+            "name": "Get application vulnerabilities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/applications/:applicationId/vulnerabilities",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "applicationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns all vulnerabilities for an application."
+        },
+        {
+          "info": {
+            "name": "Get application vulnerability",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/applications/:applicationId/vulnerabilities/:vulnerabilityId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "applicationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "vulnerabilityId",
+                "value": "UPF2-Z0YH-O121-IWBX",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets a specific vulnerability in an application."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Rules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/rules/:ruleName",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "ruleName",
+                "value": "cache-controls-missing",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets information about a rule by its name."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/applications",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page index (0..N)"
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "The size of the page to be returned"
+              }
+            ]
+          },
+          "docs": "Gets a list of all applications that you have access to."
+        },
+        {
+          "info": {
+            "name": "Get application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/applications/:applicationId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "applicationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets an application by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
