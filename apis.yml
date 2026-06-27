@@ -63,9 +63,9 @@ common:
     url: https://api.contrastsecurity.com/
   - type: Pricing
     url: https://www.contrastsecurity.com/contact-sales
-  - type: SignUp
+  - type: Signup
     url: https://www.contrastsecurity.com/contrast-free-tools
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://api.contrastsecurity.com/llms.txt
 maintainers:
   - FN: Kin Lane
