@@ -53,6 +53,12 @@ apis:
       - type: Personal Keys
         url: https://docs.contrastsecurity.com/en/personal-keys.html
 common:
+  - type: VulnerabilityDisclosure
+    url: security/contrast-security-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/contrast-security-domain-security.yml
+  - type: Authentication
+    url: authentication/contrast-security-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/contrast-security
   - type: Website
@@ -67,6 +73,8 @@ common:
     url: https://www.contrastsecurity.com/contrast-free-tools
   - type: LlmsText
     url: https://api.contrastsecurity.com/llms.txt
+  - url: https://www.contrastsecurity.com/security-influencers/rss.xml
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
