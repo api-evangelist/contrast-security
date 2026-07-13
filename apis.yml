@@ -24,7 +24,7 @@ tags:
 url: >-
   https://raw.githubusercontent.com/api-evangelist/contrast-security/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-05-11'
+modified: '2026-07-12'
 specificationVersion: '0.19'
 apis:
   - aid: contrast-security:rest-api
@@ -75,6 +75,12 @@ common:
     url: https://api.contrastsecurity.com/llms.txt
   - url: https://www.contrastsecurity.com/security-influencers/rss.xml
     type: Blog
+  - name: MCP Server
+    url: https://app.contrastsecurity.com/mcp
+    type: MCPServer
+  - name: MCP Server Source
+    url: https://github.com/Contrast-Security-OSS/mcp-contrast
+    type: MCPServer
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
