@@ -53,6 +53,8 @@ apis:
       - type: Personal Keys
         url: https://docs.contrastsecurity.com/en/personal-keys.html
 common:
+  - type: AgenticAccess
+    url: agentic-access/contrast-security-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/contrast-security-vulnerability-disclosure.yml
   - type: DomainSecurity
