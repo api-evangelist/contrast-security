@@ -1,0 +1,324 @@
+openapi: 3.1.0
+info:
+  title: Contrast Assess Applications Vulnerabilities API
+  description: Contrast Assess API for viewing and managing data, including vulnerabilities and libraries, for your organization in Contrast via your API key. See Contrast Documentation ( https://docs.contrastsecurity.com/en/assess.html) for more information.
+  version: 4.0.0
+  x-logo:
+    url: /logo.svg
+    href: /
+servers:
+- url: https://{baseUrl}
+  variables:
+    baseUrl:
+      default: app.contrastsecurity.com
+      description: The base URL of your Contrast instance
+security:
+- Contrast-API-Key: []
+  Authorization: []
+tags:
+- name: Vulnerabilities
+  description: Vulnerabilities detected in runtime by Contrast Assess are weaknesses in the application code that allow an attacker to cause harm.
+paths:
+  /organizations/{organizationId}/vulnerabilities:
+    get:
+      tags:
+      - Vulnerabilities
+      summary: Get vulnerabilities
+      description: Returns all vulnerabilities from the applications your user role has access to in the organization.
+      operationId: getVulnerabilities
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 2411f46c-7f57-426e-be61-82d583722c8d
+      responses:
+        '401':
+          $ref: '#/components/responses/Unauthorized401'
+        '403':
+          $ref: '#/components/responses/Forbidden403'
+        '200':
+          description: Request successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/V4Vulnerability'
+  /organizations/{organizationId}/vulnerabilities/{vulnerabilityId}:
+    get:
+      tags:
+      - Vulnerabilities
+      summary: Get vulnerability
+      description: Gets a vulnerability by ID.
+      operationId: getVulnerability
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 2411f46c-7f57-426e-be61-82d583722c8d
+      - name: vulnerabilityId
+        in: path
+        required: true
+        schema:
+          type: string
+        example: UPF2-Z0YH-O121-IWBX
+      responses:
+        '401':
+          $ref: '#/components/responses/Unauthorized401'
+        '403':
+          $ref: '#/components/responses/Forbidden403'
+        '404':
+          $ref: '#/components/responses/NotFound404'
+        '200':
+          description: Request successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V4Vulnerability'
+  /organizations/{organizationId}/applications/{applicationId}/vulnerabilities:
+    get:
+      tags:
+      - Vulnerabilities
+      summary: Get application vulnerabilities
+      description: Returns all vulnerabilities for an application.
+      operationId: getVulnerabilitiesForApplication
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 2411f46c-7f57-426e-be61-82d583722c8d
+      - name: applicationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 2411f46c-7f57-426e-be61-82d583722c8d
+      responses:
+        '401':
+          $ref: '#/components/responses/Unauthorized401'
+        '403':
+          $ref: '#/components/responses/Forbidden403'
+        '200':
+          description: Request successful
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/V4Vulnerability'
+  /organizations/{organizationId}/applications/{applicationId}/vulnerabilities/{vulnerabilityId}:
+    get:
+      tags:
+      - Vulnerabilities
+      summary: Get application vulnerability
+      description: Gets a specific vulnerability in an application.
+      operationId: getVulnerabilityForApplication
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 2411f46c-7f57-426e-be61-82d583722c8d
+      - name: applicationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 2411f46c-7f57-426e-be61-82d583722c8d
+      - name: vulnerabilityId
+        in: path
+        required: true
+        schema:
+          type: string
+        example: UPF2-Z0YH-O121-IWBX
+      responses:
+        '401':
+          $ref: '#/components/responses/Unauthorized401'
+        '403':
+          $ref: '#/components/responses/Forbidden403'
+        '200':
+          description: Request successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V4Vulnerability'
+components:
+  responses:
+    Forbidden403:
+      description: Forbidden
+      content:
+        application/json:
+          examples:
+            Forbidden:
+              description: Forbidden
+              value:
+                message: Authorization failure
+                details: []
+    NotFound404:
+      description: Resource not found
+      content:
+        application/json:
+          examples:
+            Resource not found:
+              description: Resource not found
+              value:
+                message:
+                - Entity not found
+                details: []
+    Unauthorized401:
+      description: Unauthorized
+      content:
+        application/json:
+          examples:
+            Unauthorized:
+              description: Unauthorized
+              value:
+                message: Authorization failure
+                details: []
+  schemas:
+    V4Vulnerability:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Vulnerability ID
+        applicationId:
+          type: string
+          description: Application ID.
+          format: uuid
+        title:
+          type: string
+          description: The display title of this vulnerability as shown in the Contrast web interface. This description is auto-generated and is guaranteed to be unique for each vulnerability in an application.
+        severity:
+          type: string
+          description: The level of severity of this vulnerability. The severity is auto-assigned based on the violated rule when the vulnerability is first created. However, it can be changed from within the Contrast web interface.
+          enum:
+          - CRITICAL
+          - HIGH
+          - MEDIUM
+          - LOW
+          - NOTE
+        ruleName:
+          type: string
+          description: The name of the rule that detected this vulnerability.
+        tags:
+          type: array
+          description: Tags associated with the vulnerability.
+          items:
+            type: string
+        firstSeenTime:
+          type: string
+          description: The first time this vulnerability was seen.
+          format: date-time
+        lastSeenTime:
+          type: string
+          description: The last time this vulnerability was seen.
+          format: date-time
+        closedTime:
+          type: string
+          description: The time this vulnerability was marked as remediated.
+          format: date-time
+        status:
+          type: string
+          description: The current status assigned to this vulnerability.
+          enum:
+          - REPORTED
+          - SUSPICIOUS
+          - CONFIRMED
+          - NOT_A_PROBLEM
+          - FIXED
+          - REMEDIATED
+          - AUTO_REMEDIATED
+        substatus:
+          type: string
+          description: The substatus of the vulnerability.
+          enum:
+          - EMPTY
+          - FALSE_POSITIVE
+          - SECURITY_CONTROL
+          - EXTERNAL_CONTROL
+          - TRUSTED
+          - OTHER
+        category:
+          type: string
+          description: Vulnerability category.
+          enum:
+          - ACCESS_CONTROL
+          - AUTHENTICATION
+          - CONFIGURATION
+          - AVAILABILITY
+          - CACHING
+          - CVE
+          - CRYPTOGRAPHY
+          - ERROR_HANDLING
+          - INJECTION
+          - SECURE_COMMUNICATION
+          - SESSION_MANAGEMENT
+          - INPUT_VALIDATION
+          - XSS
+        defaultSeverity:
+          type: string
+          description: The original severity of this vulnerability. You can change the severity of the vulnerability. This indicates the original value was assigned based on the rule and your organization's settings.
+          enum:
+          - CRITICAL
+          - HIGH
+          - MEDIUM
+          - LOW
+          - NOTE
+        confidence:
+          type: string
+          description: The level of confidence that this is a true positive result.
+          enum:
+          - LOW
+          - MEDIUM
+          - HIGH
+        likelihood:
+          type: string
+          description: Likelihood of this vulnerability to actually be exploited.
+          enum:
+          - LOW
+          - MEDIUM
+          - HIGH
+        impact:
+          type: string
+          description: The level of negative impact an exploit of this vulnerability would have.
+          enum:
+          - LOW
+          - MEDIUM
+          - HIGH
+        programmingLanguage:
+          type: string
+          description: Programming language with a detected vulnerability.
+          enum:
+          - JAVA
+          - DOTNET
+          - NODE
+          - RUBY
+          - PROXY
+          - PYTHON
+          - DOTNET_CORE
+          - GO
+          - PHP
+      description: A vulnerability represents a weakness in the application code that allows an attacker to cause harm. In the Contrast Platform, the term vulnerability specifically refers to an instance of a weakness in an application found by the Contrast Asses Agent at runtime.
+  securitySchemes:
+    Contrast-API-Key:
+      type: apiKey
+      in: header
+      name: API-Key
+    Authorization:
+      type: apiKey
+      in: header
+      name: Authorization

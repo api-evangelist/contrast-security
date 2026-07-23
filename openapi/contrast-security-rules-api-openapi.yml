@@ -1,0 +1,164 @@
+openapi: 3.1.0
+info:
+  title: Contrast Assess Applications Rules API
+  description: Contrast Assess API for viewing and managing data, including vulnerabilities and libraries, for your organization in Contrast via your API key. See Contrast Documentation ( https://docs.contrastsecurity.com/en/assess.html) for more information.
+  version: 4.0.0
+  x-logo:
+    url: /logo.svg
+    href: /
+servers:
+- url: https://{baseUrl}
+  variables:
+    baseUrl:
+      default: app.contrastsecurity.com
+      description: The base URL of your Contrast instance
+security:
+- Contrast-API-Key: []
+  Authorization: []
+tags:
+- name: Rules
+  description: A rule defines a data flow pattern used to categorize vulnerability and attack types. Some common rules are sql-injection, ssrf, and reflected-xss.
+paths:
+  /organizations/{organizationId}/rules/{ruleName}:
+    get:
+      tags:
+      - Rules
+      summary: Get rule
+      description: Gets information about a rule by its name.
+      operationId: getRuleByRuleName
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 2411f46c-7f57-426e-be61-82d583722c8d
+      - name: ruleName
+        in: path
+        required: true
+        schema:
+          type: string
+        example: cache-controls-missing
+      responses:
+        '401':
+          $ref: '#/components/responses/Unauthorized401'
+        '403':
+          $ref: '#/components/responses/Forbidden403'
+        '404':
+          $ref: '#/components/responses/NotFound404'
+        '200':
+          description: Request successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V4Rule'
+components:
+  schemas:
+    V4Rule:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Unique name identifying this rule.
+        title:
+          type: string
+          description: Human-readable title of this rule.
+        description:
+          type: string
+          description: Description of the vulnerability type the rule is checking for.
+        category:
+          type: string
+          description: Rule category. Rules are grouped into categories that have similar characteristics.
+          enum:
+          - ACCESS_CONTROL
+          - AUTHENTICATION
+          - CONFIGURATION
+          - AVAILABILITY
+          - CACHING
+          - CVE
+          - CRYPTOGRAPHY
+          - ERROR_HANDLING
+          - INJECTION
+          - SECURE_COMMUNICATION
+          - SESSION_MANAGEMENT
+          - INPUT_VALIDATION
+          - XSS
+        severity:
+          type: string
+          description: Default severity to assign for vulnerabilities violating the rule. This can be customized by your organization.
+          enum:
+          - CRITICAL
+          - HIGH
+          - MEDIUM
+          - LOW
+          - NOTE
+        confidence:
+          type: string
+          description: Level of confidence that vulnerabilities detected by this rule are true positives.
+          enum:
+          - LOW
+          - MEDIUM
+          - HIGH
+        likelihood:
+          type: string
+          description: Likelihood of vulnerabilities detected by this rule to actually be exploited.
+          enum:
+          - LOW
+          - MEDIUM
+          - HIGH
+        impact:
+          type: string
+          description: The level of negative impact an exploit of this vulnerability would have.
+          enum:
+          - LOW
+          - MEDIUM
+          - HIGH
+        cweUrl:
+          type: string
+          description: Link to information about the CWE this rule addresses.
+        owaspUrl:
+          type: string
+          description: Link to OWASP information about the vulnerability this rule addresses. QUESTION--Should these two be named Url, Uri or Link?
+      description: A rule defines a data flow pattern used to categorize vulnerability and attack types. Some common rules are sql-injection, ssrf, and reflected-xss.
+  responses:
+    Forbidden403:
+      description: Forbidden
+      content:
+        application/json:
+          examples:
+            Forbidden:
+              description: Forbidden
+              value:
+                message: Authorization failure
+                details: []
+    NotFound404:
+      description: Resource not found
+      content:
+        application/json:
+          examples:
+            Resource not found:
+              description: Resource not found
+              value:
+                message:
+                - Entity not found
+                details: []
+    Unauthorized401:
+      description: Unauthorized
+      content:
+        application/json:
+          examples:
+            Unauthorized:
+              description: Unauthorized
+              value:
+                message: Authorization failure
+                details: []
+  securitySchemes:
+    Contrast-API-Key:
+      type: apiKey
+      in: header
+      name: API-Key
+    Authorization:
+      type: apiKey
+      in: header
+      name: Authorization

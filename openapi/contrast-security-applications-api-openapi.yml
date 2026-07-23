@@ -1,0 +1,267 @@
+openapi: 3.1.0
+info:
+  title: Contrast Assess Applications API
+  description: Contrast Assess API for viewing and managing data, including vulnerabilities and libraries, for your organization in Contrast via your API key. See Contrast Documentation ( https://docs.contrastsecurity.com/en/assess.html) for more information.
+  version: 4.0.0
+  x-logo:
+    url: /logo.svg
+    href: /
+servers:
+- url: https://{baseUrl}
+  variables:
+    baseUrl:
+      default: app.contrastsecurity.com
+      description: The base URL of your Contrast instance
+security:
+- Contrast-API-Key: []
+  Authorization: []
+tags:
+- name: Applications
+  description: An application represents an executable unit of code that can be instrumented at runtime by an agent in Contrast. This can be a web app, microservice, or other runnable code and any dependencies included in its executable, packaged form.
+paths:
+  /organizations/{organizationId}/applications:
+    get:
+      tags:
+      - Applications
+      summary: Get applications
+      description: Gets a list of all applications that you have access to.
+      operationId: getApplications
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 2411f46c-7f57-426e-be61-82d583722c8d
+      - name: page
+        in: query
+        description: Zero-based page index (0..N)
+        schema:
+          type: integer
+          default: 0
+      - name: size
+        in: query
+        description: The size of the page to be returned
+        schema:
+          type: integer
+          default: 10
+      responses:
+        '401':
+          $ref: '#/components/responses/Unauthorized401'
+        '403':
+          $ref: '#/components/responses/Forbidden403'
+        '200':
+          description: Request successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PageV4Application'
+  /organizations/{organizationId}/applications/{applicationId}:
+    get:
+      tags:
+      - Applications
+      summary: Get application
+      description: Gets an application by ID
+      operationId: getApplication
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 2411f46c-7f57-426e-be61-82d583722c8d
+      - name: applicationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 2411f46c-7f57-426e-be61-82d583722c8d
+      responses:
+        '401':
+          $ref: '#/components/responses/Unauthorized401'
+        '403':
+          $ref: '#/components/responses/Forbidden403'
+        '200':
+          description: Request successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V4Application'
+components:
+  responses:
+    Forbidden403:
+      description: Forbidden
+      content:
+        application/json:
+          examples:
+            Forbidden:
+              description: Forbidden
+              value:
+                message: Authorization failure
+                details: []
+    Unauthorized401:
+      description: Unauthorized
+      content:
+        application/json:
+          examples:
+            Unauthorized:
+              description: Unauthorized
+              value:
+                message: Authorization failure
+                details: []
+  schemas:
+    PageV4Application:
+      type: object
+      properties:
+        totalElements:
+          description: The toal number of Elements.
+          type: integer
+          format: int64
+        totalPages:
+          description: The toal number of Pages.
+          type: integer
+          format: int32
+        first:
+          description: Whether the current Page is the first one.
+          type: boolean
+        last:
+          description: Whether the current Page is the last one.
+          type: boolean
+        size:
+          description: The size of the Page.
+          type: integer
+          format: int32
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/V4Application'
+        number:
+          description: The number of the current Page. Is always non-negative.
+          type: integer
+          format: int32
+        sort:
+          $ref: '#/components/schemas/SortObject'
+        pageable:
+          $ref: '#/components/schemas/PageableObject'
+        numberOfElements:
+          description: The number of elements currently on this Page.
+          type: integer
+          format: int32
+        empty:
+          description: Whether the current Page is empty.
+          type: boolean
+    V4Application:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Application ID.
+          format: uuid
+        name:
+          type: string
+          description: Application name. For applications created in Assess or Protect, the agent assigns the name.
+        displayName:
+          type: string
+          description: Name that appears in Contrast when displaying this application. Overrides the name field if present.
+        path:
+          type: string
+          description: The root path this application is hosted on in the web server. This is discovered by the Assess or Protect agent.
+        language:
+          type: string
+          description: The application's programming language.
+          enum:
+          - JAVA
+          - DOTNET
+          - NODE
+          - RUBY
+          - PROXY
+          - PYTHON
+          - DOTNET_CORE
+          - GO
+          - PHP
+        importance:
+          type: string
+          description: Level of importance of this application in the organization. Applications with a higher level of importance are more scrutinized for security issues.
+          enum:
+          - UNIMPORTANT
+          - LOW
+          - MEDIUM
+          - HIGH
+          - CRITICAL
+        isArchived:
+          type: boolean
+          description: Archived application
+        technologies:
+          type: array
+          description: Technologies associated with this application.
+          items:
+            type: string
+        tags:
+          type: array
+          description: Application tags. Tags are labels that can be assigned to applications to help organize applications and improve search functionality. These can be configured in the agent's configuration file or via the Contrast web interface.
+          items:
+            type: string
+        metadata:
+          type: array
+          description: Metadata assigned to this application. This is a set of key-value pairs that are defined either in the agent's configuration file or in the Contrast web interface. Metadata fields are predefined at the Organization level and strongly typed.
+          items:
+            type: object
+            additionalProperties:
+              type: string
+        firstSeenTime:
+          type: string
+          description: The first time this application was observed by an agent, or the time this application was manually created (if not created by an agent).
+          format: date-time
+        lastSeenTime:
+          type: string
+          description: The most recent time an Assess or Protect agent observed activity for this application or it was scanned by SCA.
+          format: date-time
+      description: Represents a single executable component that can be instrumented or otherwise assessed for security vulnerabilities.
+    SortObject:
+      type: object
+      properties:
+        empty:
+          description: True if the request had no sort parameters defined.
+          type: boolean
+        unsorted:
+          description: True if this response is not sorted.
+          type: boolean
+        sorted:
+          description: True if this response is sorted.
+          type: boolean
+    PageableObject:
+      type: object
+      properties:
+        offset:
+          description: The offset to be taken according to the underlying page and page size.
+          type: integer
+          format: int64
+        sort:
+          description: The sorting parameters.
+          $ref: '#/components/schemas/SortObject'
+        paged:
+          description: True if this response is paginated.
+          type: boolean
+        unpaged:
+          description: True if this response is not paginated.
+          type: boolean
+        pageSize:
+          description: The number of items per page.
+          type: integer
+          format: int32
+        pageNumber:
+          description: The current page number.
+          type: integer
+          format: int32
+  securitySchemes:
+    Contrast-API-Key:
+      type: apiKey
+      in: header
+      name: API-Key
+    Authorization:
+      type: apiKey
+      in: header
+      name: Authorization

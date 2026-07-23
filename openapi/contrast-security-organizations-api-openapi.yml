@@ -1,0 +1,111 @@
+openapi: 3.1.0
+info:
+  title: Contrast Assess Applications Organizations API
+  description: Contrast Assess API for viewing and managing data, including vulnerabilities and libraries, for your organization in Contrast via your API key. See Contrast Documentation ( https://docs.contrastsecurity.com/en/assess.html) for more information.
+  version: 4.0.0
+  x-logo:
+    url: /logo.svg
+    href: /
+servers:
+- url: https://{baseUrl}
+  variables:
+    baseUrl:
+      default: app.contrastsecurity.com
+      description: The base URL of your Contrast instance
+security:
+- Contrast-API-Key: []
+  Authorization: []
+tags:
+- name: Organizations
+  description: An organization represents a grouping of user accounts in Contrast.
+paths:
+  /organizations/{organizationId}:
+    get:
+      tags:
+      - Organizations
+      summary: Get organization
+      description: Gets an organization by ID
+      operationId: getOrganization
+      parameters:
+      - name: organizationId
+        in: path
+        required: true
+        schema:
+          type: string
+          format: uuid
+        example: 2411f46c-7f57-426e-be61-82d583722c8d
+      responses:
+        '401':
+          $ref: '#/components/responses/Unauthorized401'
+        '403':
+          $ref: '#/components/responses/Forbidden403'
+        '200':
+          description: Request successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/V4Organization'
+components:
+  schemas:
+    V4Organization:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Organization ID in Contrast web interface. Located under User menu > User Settings > Profile.
+          format: uuid
+          example: c3dfe47c-f859-4fcf-ae90-4cbe564c1e23
+        name:
+          type: string
+          description: Organization name.
+        timezone:
+          type: string
+          description: Organization's time zone.
+          example: EST
+        dateFormat:
+          type: string
+          description: Organization's date format.
+          example: MM/dd/yyyy
+        timeFormat:
+          type: string
+          description: Organization's time format.
+          example: hh:mm
+        locale:
+          type: string
+          description: Organization's locale.
+          example: en
+        createdTime:
+          type: string
+          description: The time this Organization was first created.
+          format: date-time
+      description: An organization represents your customer account in the Contrast Platform.
+  responses:
+    Forbidden403:
+      description: Forbidden
+      content:
+        application/json:
+          examples:
+            Forbidden:
+              description: Forbidden
+              value:
+                message: Authorization failure
+                details: []
+    Unauthorized401:
+      description: Unauthorized
+      content:
+        application/json:
+          examples:
+            Unauthorized:
+              description: Unauthorized
+              value:
+                message: Authorization failure
+                details: []
+  securitySchemes:
+    Contrast-API-Key:
+      type: apiKey
+      in: header
+      name: API-Key
+    Authorization:
+      type: apiKey
+      in: header
+      name: Authorization
