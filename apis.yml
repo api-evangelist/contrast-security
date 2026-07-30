@@ -12,7 +12,19 @@ description: >-
   authenticated via API key plus Authorization header (Base64 of
   username:service_key) and an Organization ID.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/contrast-security.png
 tags:
   - Application Security
   - AppSec
@@ -27,31 +39,76 @@ created: '2026-05-11'
 modified: '2026-07-12'
 specificationVersion: '0.19'
 apis:
-  - aid: contrast-security:rest-api
-    name: Contrast TeamServer REST API
-    description: >-
-      REST API for interacting with Contrast TeamServer to manage
-      applications, libraries, vulnerabilities, traces, servers, agents,
-      and organization settings. Requires an API key, Authorization
-      header formed as Base64(username:service_key), and the
-      Organization ID in the request path.
-    humanURL: https://api.contrastsecurity.com/
-    baseURL: https://app.contrastsecurity.com/Contrast/api/ng
-    tags:
-      - Application Security
-      - IAST
-      - RASP
-      - SCA
-      - Vulnerabilities
-    properties:
-      - type: Documentation
-        url: https://api.contrastsecurity.com/
-      - type: REST API Docs
-        url: https://app.contrastsecurity.com/Contrast/docs/restapi/index.html
-      - type: GitHub
-        url: https://github.com/Contrast-Security-OSS/contrast-teamserver-api-docs
-      - type: Personal Keys
-        url: https://docs.contrastsecurity.com/en/personal-keys.html
+- aid: contrast-security:rest-api
+  name: Contrast TeamServer REST API
+  description: >-
+    REST API for interacting with Contrast TeamServer to manage applications, libraries, vulnerabilities,
+    traces, servers, agents, and organization settings. Requires an API key, Authorization header formed
+    as Base64(username:service_key), and the Organization ID in the request path.
+  humanURL: https://api.contrastsecurity.com/
+  baseURL: https://app.contrastsecurity.com/Contrast/api/ng
+  tags:
+  - Application Security
+  - IAST
+  - RASP
+  - SCA
+  - Vulnerabilities
+  properties:
+  - type: Documentation
+    url: https://api.contrastsecurity.com/
+  - type: REST API Docs
+    url: https://app.contrastsecurity.com/Contrast/docs/restapi/index.html
+  - type: GitHub
+    url: https://github.com/Contrast-Security-OSS/contrast-teamserver-api-docs
+  - type: Personal Keys
+    url: https://docs.contrastsecurity.com/en/personal-keys.html
+- aid: contrast-security:contrast-security-applications-api
+  name: Contrast Security Applications API
+  description: >-
+    An application represents an executable unit of code that can be instrumented at runtime by an agent
+    in Contrast. This can be a web app, microservice, or other runnable code and any dependencies included
+    in its executable, packaged form.
+  humanURL: https://api.contrastsecurity.com/
+  baseURL: https://app.contrastsecurity.com/Contrast/api/ng
+  tags:
+  - Applications
+  properties:
+  - type: OpenAPI
+    url: openapi/contrast-security-applications-api-openapi.yml
+- aid: contrast-security:contrast-security-organizations-api
+  name: Contrast Security Organizations API
+  description: An organization represents a grouping of user accounts in Contrast.
+  humanURL: https://api.contrastsecurity.com/
+  baseURL: https://app.contrastsecurity.com/Contrast/api/ng
+  tags:
+  - Organizations
+  properties:
+  - type: OpenAPI
+    url: openapi/contrast-security-organizations-api-openapi.yml
+- aid: contrast-security:contrast-security-rules-api
+  name: Contrast Security Rules API
+  description: >-
+    A rule defines a data flow pattern used to categorize vulnerability and attack types. Some common
+    rules are sql-injection, ssrf, and reflected-xss.
+  humanURL: https://api.contrastsecurity.com/
+  baseURL: https://app.contrastsecurity.com/Contrast/api/ng
+  tags:
+  - Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/contrast-security-rules-api-openapi.yml
+- aid: contrast-security:contrast-security-vulnerabilities-api
+  name: Contrast Security Vulnerabilities API
+  description: >-
+    Vulnerabilities detected in runtime by Contrast Assess are weaknesses in the application code that
+    allow an attacker to cause harm.
+  humanURL: https://api.contrastsecurity.com/
+  baseURL: https://app.contrastsecurity.com/Contrast/api/ng
+  tags:
+  - Vulnerabilities
+  properties:
+  - type: OpenAPI
+    url: openapi/contrast-security-vulnerabilities-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/contrast-security-agentic-access.yml
