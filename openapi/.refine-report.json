@@ -1,0 +1,20 @@
+{
+  "provider": "contrast-security",
+  "sources": [
+    "contrast-security-applications-api-openapi.yml",
+    "contrast-security-organizations-api-openapi.yml",
+    "contrast-security-rules-api-openapi.yml",
+    "contrast-security-vulnerabilities-api-openapi.yml"
+  ],
+  "outputs": [
+    "contrast-security-applications-api-openapi.yml",
+    "contrast-security-organizations-api-openapi.yml",
+    "contrast-security-rules-api-openapi.yml",
+    "contrast-security-vulnerabilities-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
