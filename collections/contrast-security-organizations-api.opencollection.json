@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Contrast Assess Applications Organizations API",
+    "version": "4.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API-Key",
+      "value": "{{API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets an organization by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

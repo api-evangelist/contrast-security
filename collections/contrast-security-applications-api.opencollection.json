@@ -1,0 +1,79 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Contrast Assess Applications API",
+    "version": "4.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API-Key",
+      "value": "{{API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get applications",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/applications",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Zero-based page index (0..N)"
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "The size of the page to be returned"
+              }
+            ]
+          },
+          "docs": "Gets a list of all applications that you have access to."
+        },
+        {
+          "info": {
+            "name": "Get application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/applications/:applicationId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "applicationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets an application by ID"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

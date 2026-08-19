@@ -1,0 +1,118 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Contrast Assess Applications Vulnerabilities API",
+    "version": "4.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API-Key",
+      "value": "{{API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Vulnerabilities",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get vulnerabilities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/vulnerabilities",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns all vulnerabilities from the applications your user role has access to in the organization."
+        },
+        {
+          "info": {
+            "name": "Get vulnerability",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/vulnerabilities/:vulnerabilityId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "vulnerabilityId",
+                "value": "UPF2-Z0YH-O121-IWBX",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets a vulnerability by ID."
+        },
+        {
+          "info": {
+            "name": "Get application vulnerabilities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/applications/:applicationId/vulnerabilities",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "applicationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns all vulnerabilities for an application."
+        },
+        {
+          "info": {
+            "name": "Get application vulnerability",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/applications/:applicationId/vulnerabilities/:vulnerabilityId",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "applicationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "vulnerabilityId",
+                "value": "UPF2-Z0YH-O121-IWBX",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets a specific vulnerability in an application."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

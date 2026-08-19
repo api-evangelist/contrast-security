@@ -1,0 +1,49 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Contrast Assess Applications Rules API",
+    "version": "4.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "API-Key",
+      "value": "{{API-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{baseUrl}/organizations/:organizationId/rules/:ruleName",
+            "params": [
+              {
+                "name": "organizationId",
+                "value": "2411f46c-7f57-426e-be61-82d583722c8d",
+                "type": "path"
+              },
+              {
+                "name": "ruleName",
+                "value": "cache-controls-missing",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets information about a rule by its name."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
