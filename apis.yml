@@ -71,6 +71,8 @@ apis:
   humanURL: https://api.contrastsecurity.com/
   baseURL: https://app.contrastsecurity.com/Contrast/api/ng
   tags:
+  - Application
+  tags_raw:
   - Applications
   properties:
   - type: OpenAPI
@@ -81,6 +83,8 @@ apis:
   humanURL: https://api.contrastsecurity.com/
   baseURL: https://app.contrastsecurity.com/Contrast/api/ng
   tags:
+  - Organization
+  tags_raw:
   - Organizations
   properties:
   - type: OpenAPI
