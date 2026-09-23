@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Contrast Assess Applications API
   description: Contrast Assess API for viewing and managing data, including vulnerabilities and libraries, for your organization in Contrast via your API key. See Contrast Documentation ( https://docs.contrastsecurity.com/en/assess.html) for more information.
@@ -113,6 +113,18 @@ components:
                 message: Authorization failure
                 details: []
   schemas:
+    SortObject:
+      type: object
+      properties:
+        empty:
+          description: True if the request had no sort parameters defined.
+          type: boolean
+        unsorted:
+          description: True if this response is not sorted.
+          type: boolean
+        sorted:
+          description: True if this response is sorted.
+          type: boolean
     PageV4Application:
       type: object
       properties:
@@ -153,6 +165,30 @@ components:
         empty:
           description: Whether the current Page is empty.
           type: boolean
+    PageableObject:
+      type: object
+      properties:
+        offset:
+          description: The offset to be taken according to the underlying page and page size.
+          type: integer
+          format: int64
+        sort:
+          description: The sorting parameters.
+          $ref: '#/components/schemas/SortObject'
+        paged:
+          description: True if this response is paginated.
+          type: boolean
+        unpaged:
+          description: True if this response is not paginated.
+          type: boolean
+        pageSize:
+          description: The number of items per page.
+          type: integer
+          format: int32
+        pageNumber:
+          description: The current page number.
+          type: integer
+          format: int32
     V4Application:
       type: object
       properties:
@@ -220,42 +256,6 @@ components:
           description: The most recent time an Assess or Protect agent observed activity for this application or it was scanned by SCA.
           format: date-time
       description: Represents a single executable component that can be instrumented or otherwise assessed for security vulnerabilities.
-    SortObject:
-      type: object
-      properties:
-        empty:
-          description: True if the request had no sort parameters defined.
-          type: boolean
-        unsorted:
-          description: True if this response is not sorted.
-          type: boolean
-        sorted:
-          description: True if this response is sorted.
-          type: boolean
-    PageableObject:
-      type: object
-      properties:
-        offset:
-          description: The offset to be taken according to the underlying page and page size.
-          type: integer
-          format: int64
-        sort:
-          description: The sorting parameters.
-          $ref: '#/components/schemas/SortObject'
-        paged:
-          description: True if this response is paginated.
-          type: boolean
-        unpaged:
-          description: True if this response is not paginated.
-          type: boolean
-        pageSize:
-          description: The number of items per page.
-          type: integer
-          format: int32
-        pageNumber:
-          description: The current page number.
-          type: integer
-          format: int32
   securitySchemes:
     Contrast-API-Key:
       type: apiKey

@@ -1,10 +1,7 @@
 {
   "provider": "contrast-security",
   "sources": [
-    "contrast-security-applications-api-openapi.yml",
-    "contrast-security-organizations-api-openapi.yml",
-    "contrast-security-rules-api-openapi.yml",
-    "contrast-security-vulnerabilities-api-openapi.yml"
+    "_original/contrast-security-openapi.yml"
   ],
   "outputs": [
     "contrast-security-applications-api-openapi.yml",
@@ -15,6 +12,15 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "contrast-security-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "contrast-security-applications-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "contrast-security-organizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "contrast-security-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "contrast-security-vulnerabilities-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
