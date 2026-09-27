@@ -91,40 +91,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/V4Application'
 components:
-  responses:
-    Forbidden403:
-      description: Forbidden
-      content:
-        application/json:
-          examples:
-            Forbidden:
-              description: Forbidden
-              value:
-                message: Authorization failure
-                details: []
-    Unauthorized401:
-      description: Unauthorized
-      content:
-        application/json:
-          examples:
-            Unauthorized:
-              description: Unauthorized
-              value:
-                message: Authorization failure
-                details: []
   schemas:
-    SortObject:
-      type: object
-      properties:
-        empty:
-          description: True if the request had no sort parameters defined.
-          type: boolean
-        unsorted:
-          description: True if this response is not sorted.
-          type: boolean
-        sorted:
-          description: True if this response is sorted.
-          type: boolean
     PageV4Application:
       type: object
       properties:
@@ -256,6 +223,39 @@ components:
           description: The most recent time an Assess or Protect agent observed activity for this application or it was scanned by SCA.
           format: date-time
       description: Represents a single executable component that can be instrumented or otherwise assessed for security vulnerabilities.
+    SortObject:
+      type: object
+      properties:
+        empty:
+          description: True if the request had no sort parameters defined.
+          type: boolean
+        unsorted:
+          description: True if this response is not sorted.
+          type: boolean
+        sorted:
+          description: True if this response is sorted.
+          type: boolean
+  responses:
+    Forbidden403:
+      description: Forbidden
+      content:
+        application/json:
+          examples:
+            Forbidden:
+              description: Forbidden
+              value:
+                message: Authorization failure
+                details: []
+    Unauthorized401:
+      description: Unauthorized
+      content:
+        application/json:
+          examples:
+            Unauthorized:
+              description: Unauthorized
+              value:
+                message: Authorization failure
+                details: []
   securitySchemes:
     Contrast-API-Key:
       type: apiKey

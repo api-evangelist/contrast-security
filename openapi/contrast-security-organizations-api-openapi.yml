@@ -46,27 +46,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/V4Organization'
 components:
-  responses:
-    Unauthorized401:
-      description: Unauthorized
-      content:
-        application/json:
-          examples:
-            Unauthorized:
-              description: Unauthorized
-              value:
-                message: Authorization failure
-                details: []
-    Forbidden403:
-      description: Forbidden
-      content:
-        application/json:
-          examples:
-            Forbidden:
-              description: Forbidden
-              value:
-                message: Authorization failure
-                details: []
   schemas:
     V4Organization:
       type: object
@@ -100,6 +79,27 @@ components:
           description: The time this Organization was first created.
           format: date-time
       description: An organization represents your customer account in the Contrast Platform.
+  responses:
+    Forbidden403:
+      description: Forbidden
+      content:
+        application/json:
+          examples:
+            Forbidden:
+              description: Forbidden
+              value:
+                message: Authorization failure
+                details: []
+    Unauthorized401:
+      description: Unauthorized
+      content:
+        application/json:
+          examples:
+            Unauthorized:
+              description: Unauthorized
+              value:
+                message: Authorization failure
+                details: []
   securitySchemes:
     Contrast-API-Key:
       type: apiKey

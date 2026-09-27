@@ -122,16 +122,6 @@ components:
           description: Link to OWASP information about the vulnerability this rule addresses. QUESTION--Should these two be named Url, Uri or Link?
       description: A rule defines a data flow pattern used to categorize vulnerability and attack types. Some common rules are sql-injection, ssrf, and reflected-xss.
   responses:
-    Unauthorized401:
-      description: Unauthorized
-      content:
-        application/json:
-          examples:
-            Unauthorized:
-              description: Unauthorized
-              value:
-                message: Authorization failure
-                details: []
     Forbidden403:
       description: Forbidden
       content:
@@ -152,6 +142,16 @@ components:
               value:
                 message:
                 - Entity not found
+                details: []
+    Unauthorized401:
+      description: Unauthorized
+      content:
+        application/json:
+          examples:
+            Unauthorized:
+              description: Unauthorized
+              value:
+                message: Authorization failure
                 details: []
   securitySchemes:
     Contrast-API-Key:
