@@ -54,6 +54,38 @@ paths:
               schema:
                 $ref: '#/components/schemas/V4Rule'
 components:
+  responses:
+    Forbidden403:
+      description: Forbidden
+      content:
+        application/json:
+          examples:
+            Forbidden:
+              description: Forbidden
+              value:
+                message: Authorization failure
+                details: []
+    NotFound404:
+      description: Resource not found
+      content:
+        application/json:
+          examples:
+            Resource not found:
+              description: Resource not found
+              value:
+                message:
+                - Entity not found
+                details: []
+    Unauthorized401:
+      description: Unauthorized
+      content:
+        application/json:
+          examples:
+            Unauthorized:
+              description: Unauthorized
+              value:
+                message: Authorization failure
+                details: []
   schemas:
     V4Rule:
       type: object
@@ -121,38 +153,6 @@ components:
           type: string
           description: Link to OWASP information about the vulnerability this rule addresses. QUESTION--Should these two be named Url, Uri or Link?
       description: A rule defines a data flow pattern used to categorize vulnerability and attack types. Some common rules are sql-injection, ssrf, and reflected-xss.
-  responses:
-    Forbidden403:
-      description: Forbidden
-      content:
-        application/json:
-          examples:
-            Forbidden:
-              description: Forbidden
-              value:
-                message: Authorization failure
-                details: []
-    NotFound404:
-      description: Resource not found
-      content:
-        application/json:
-          examples:
-            Resource not found:
-              description: Resource not found
-              value:
-                message:
-                - Entity not found
-                details: []
-    Unauthorized401:
-      description: Unauthorized
-      content:
-        application/json:
-          examples:
-            Unauthorized:
-              description: Unauthorized
-              value:
-                message: Authorization failure
-                details: []
   securitySchemes:
     Contrast-API-Key:
       type: apiKey
