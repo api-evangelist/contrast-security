@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/contrast-security/main/json-schema/contrast-security-v4-organization-schema.json",
+  "title": "V4Organization",
+  "description": "An organization represents your customer account in the Contrast Platform.",
+  "x-generated": "2026-10-04",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/contrast-security-organizations-api-openapi.yml#/components/schemas/V4Organization",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Organization ID in Contrast web interface. Located under User menu > User Settings > Profile.",
+      "format": "uuid"
+    },
+    "name": {
+      "type": "string",
+      "description": "Organization name."
+    },
+    "timezone": {
+      "type": "string",
+      "description": "Organization's time zone."
+    },
+    "dateFormat": {
+      "type": "string",
+      "description": "Organization's date format."
+    },
+    "timeFormat": {
+      "type": "string",
+      "description": "Organization's time format."
+    },
+    "locale": {
+      "type": "string",
+      "description": "Organization's locale."
+    },
+    "createdTime": {
+      "type": "string",
+      "description": "The time this Organization was first created.",
+      "format": "date-time"
+    }
+  }
+}

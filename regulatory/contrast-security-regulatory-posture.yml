@@ -1,0 +1,18 @@
+generated: '2026-10-04'
+method: probed
+source: https://www.contrastsecurity.com/privacy-matters
+signals:
+  data_subject_request:
+    evidence:
+      - source: https://www.contrastsecurity.com/privacy-matters
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "Complying with data subject rights requests"
+    note: Indicates that Contrast acknowledges and processes data subject rights requests as a legal obligation.
+  incident_notification:
+    evidence:
+      - source: https://www.contrastsecurity.com/privacy-matters
+        http_status: 200
+        fetched: /tmp/privacy.html
+        quote: "Contrast products are not designed to capture and process personal data, but our products may incidentally capture personal information as part of an attack or vulnerability trace. If our products capture personal information, we act as a data processor for the customer who is using our product."
+    note: Describes how Contrast handles incidental personal data capture and positions itself as a processor following customer instructions.

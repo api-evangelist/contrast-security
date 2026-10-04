@@ -156,38 +156,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/V4Vulnerability'
 components:
-  responses:
-    Forbidden403:
-      description: Forbidden
-      content:
-        application/json:
-          examples:
-            Forbidden:
-              description: Forbidden
-              value:
-                message: Authorization failure
-                details: []
-    NotFound404:
-      description: Resource not found
-      content:
-        application/json:
-          examples:
-            Resource not found:
-              description: Resource not found
-              value:
-                message:
-                - Entity not found
-                details: []
-    Unauthorized401:
-      description: Unauthorized
-      content:
-        application/json:
-          examples:
-            Unauthorized:
-              description: Unauthorized
-              value:
-                message: Authorization failure
-                details: []
   schemas:
     V4Vulnerability:
       type: object
@@ -313,6 +281,38 @@ components:
           - GO
           - PHP
       description: A vulnerability represents a weakness in the application code that allows an attacker to cause harm. In the Contrast Platform, the term vulnerability specifically refers to an instance of a weakness in an application found by the Contrast Asses Agent at runtime.
+  responses:
+    Unauthorized401:
+      description: Unauthorized
+      content:
+        application/json:
+          examples:
+            Unauthorized:
+              description: Unauthorized
+              value:
+                message: Authorization failure
+                details: []
+    Forbidden403:
+      description: Forbidden
+      content:
+        application/json:
+          examples:
+            Forbidden:
+              description: Forbidden
+              value:
+                message: Authorization failure
+                details: []
+    NotFound404:
+      description: Resource not found
+      content:
+        application/json:
+          examples:
+            Resource not found:
+              description: Resource not found
+              value:
+                message:
+                - Entity not found
+                details: []
   securitySchemes:
     Contrast-API-Key:
       type: apiKey

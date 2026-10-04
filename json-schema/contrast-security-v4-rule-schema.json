@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/contrast-security/main/json-schema/contrast-security-v4-rule-schema.json",
+  "title": "V4Rule",
+  "description": "A rule defines a data flow pattern used to categorize vulnerability and attack types. Some common rules are sql-injection, ssrf, and reflected-xss.",
+  "x-generated": "2026-10-04",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/contrast-security-rules-api-openapi.yml#/components/schemas/V4Rule",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Unique name identifying this rule."
+    },
+    "title": {
+      "type": "string",
+      "description": "Human-readable title of this rule."
+    },
+    "description": {
+      "type": "string",
+      "description": "Description of the vulnerability type the rule is checking for."
+    },
+    "category": {
+      "type": "string",
+      "description": "Rule category. Rules are grouped into categories that have similar characteristics.",
+      "enum": [
+        "ACCESS_CONTROL",
+        "AUTHENTICATION",
+        "CONFIGURATION",
+        "AVAILABILITY",
+        "CACHING",
+        "CVE",
+        "CRYPTOGRAPHY",
+        "ERROR_HANDLING",
+        "INJECTION",
+        "SECURE_COMMUNICATION",
+        "SESSION_MANAGEMENT",
+        "INPUT_VALIDATION",
+        "XSS"
+      ]
+    },
+    "severity": {
+      "type": "string",
+      "description": "Default severity to assign for vulnerabilities violating the rule. This can be customized by your organization.",
+      "enum": [
+        "CRITICAL",
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "NOTE"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "description": "Level of confidence that vulnerabilities detected by this rule are true positives.",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    "likelihood": {
+      "type": "string",
+      "description": "Likelihood of vulnerabilities detected by this rule to actually be exploited.",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    "impact": {
+      "type": "string",
+      "description": "The level of negative impact an exploit of this vulnerability would have.",
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
+    "cweUrl": {
+      "type": "string",
+      "description": "Link to information about the CWE this rule addresses."
+    },
+    "owaspUrl": {
+      "type": "string",
+      "description": "Link to OWASP information about the vulnerability this rule addresses. QUESTION--Should these two be named Url, Uri or Link?"
+    }
+  }
+}

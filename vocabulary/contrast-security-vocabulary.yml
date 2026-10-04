@@ -1,0 +1,75 @@
+generated: '2026-10-04'
+method: derived
+generator: derive-vocabulary.py
+source:
+- openapi/contrast-security-applications-api-openapi.yml
+- openapi/contrast-security-organizations-api-openapi.yml
+- openapi/contrast-security-rules-api-openapi.yml
+- openapi/contrast-security-vulnerabilities-api-openapi.yml
+vocabulary:
+  name: Contrast Security Domain Vocabulary
+  description: 'Terms declared by Contrast Security''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-04'
+  terms:
+  - term: Applications
+    definition: An application represents an executable unit of code that can be instrumented at runtime by an agent in Contrast. This can be
+      a web app, microservice, or other runnable code and any dependencies included in its executable, packaged form.
+    tags:
+    - Resource Group
+    source: openapi/contrast-security-applications-api-openapi.yml
+  - term: Organizations
+    definition: An organization represents a grouping of user accounts in Contrast.
+    tags:
+    - Resource Group
+    source: openapi/contrast-security-organizations-api-openapi.yml
+  - term: Rules
+    definition: A rule defines a data flow pattern used to categorize vulnerability and attack types. Some common rules are sql-injection, ssrf,
+      and reflected-xss.
+    tags:
+    - Resource Group
+    source: openapi/contrast-security-rules-api-openapi.yml
+  - term: Vulnerabilities
+    definition: Vulnerabilities detected in runtime by Contrast Assess are weaknesses in the application code that allow an attacker to cause
+      harm.
+    tags:
+    - Resource Group
+    source: openapi/contrast-security-vulnerabilities-api-openapi.yml
+  - term: SortObject
+    definition: 'Object declared by the contract with fields: empty, unsorted, sorted.'
+    tags:
+    - Object
+    source: openapi/contrast-security-applications-api-openapi.yml#/components/schemas/SortObject
+  - term: PageV4Application
+    definition: 'Object declared by the contract with fields: totalElements, totalPages, first, last, size, content, number, sort, pageable, numberOfElements,
+      empty.'
+    tags:
+    - Object
+    source: openapi/contrast-security-applications-api-openapi.yml#/components/schemas/PageV4Application
+  - term: V4Application
+    definition: Represents a single executable component that can be instrumented or otherwise assessed for security vulnerabilities.
+    tags:
+    - Object
+    source: openapi/contrast-security-applications-api-openapi.yml#/components/schemas/V4Application
+  - term: PageableObject
+    definition: 'Object declared by the contract with fields: offset, sort, paged, unpaged, pageSize, pageNumber.'
+    tags:
+    - Object
+    source: openapi/contrast-security-applications-api-openapi.yml#/components/schemas/PageableObject
+  - term: V4Organization
+    definition: An organization represents your customer account in the Contrast Platform.
+    tags:
+    - Object
+    source: openapi/contrast-security-organizations-api-openapi.yml#/components/schemas/V4Organization
+  - term: V4Rule
+    definition: A rule defines a data flow pattern used to categorize vulnerability and attack types. Some common rules are sql-injection, ssrf,
+      and reflected-xss.
+    tags:
+    - Object
+    source: openapi/contrast-security-rules-api-openapi.yml#/components/schemas/V4Rule
+  - term: V4Vulnerability
+    definition: A vulnerability represents a weakness in the application code that allows an attacker to cause harm. In the Contrast Platform,
+      the term vulnerability specifically refers to an instance of a weakness in an application found by the Contrast Asses Agent at runtime.
+    tags:
+    - Object
+    source: openapi/contrast-security-vulnerabilities-api-openapi.yml#/components/schemas/V4Vulnerability

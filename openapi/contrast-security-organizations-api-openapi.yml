@@ -80,16 +80,6 @@ components:
           format: date-time
       description: An organization represents your customer account in the Contrast Platform.
   responses:
-    Forbidden403:
-      description: Forbidden
-      content:
-        application/json:
-          examples:
-            Forbidden:
-              description: Forbidden
-              value:
-                message: Authorization failure
-                details: []
     Unauthorized401:
       description: Unauthorized
       content:
@@ -97,6 +87,16 @@ components:
           examples:
             Unauthorized:
               description: Unauthorized
+              value:
+                message: Authorization failure
+                details: []
+    Forbidden403:
+      description: Forbidden
+      content:
+        application/json:
+          examples:
+            Forbidden:
+              description: Forbidden
               value:
                 message: Authorization failure
                 details: []

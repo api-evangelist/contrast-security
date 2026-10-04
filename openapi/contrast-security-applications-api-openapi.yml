@@ -92,58 +92,6 @@ paths:
                 $ref: '#/components/schemas/V4Application'
 components:
   schemas:
-    SortObject:
-      type: object
-      properties:
-        empty:
-          description: True if the request had no sort parameters defined.
-          type: boolean
-        unsorted:
-          description: True if this response is not sorted.
-          type: boolean
-        sorted:
-          description: True if this response is sorted.
-          type: boolean
-    PageV4Application:
-      type: object
-      properties:
-        totalElements:
-          description: The toal number of Elements.
-          type: integer
-          format: int64
-        totalPages:
-          description: The toal number of Pages.
-          type: integer
-          format: int32
-        first:
-          description: Whether the current Page is the first one.
-          type: boolean
-        last:
-          description: Whether the current Page is the last one.
-          type: boolean
-        size:
-          description: The size of the Page.
-          type: integer
-          format: int32
-        content:
-          type: array
-          items:
-            $ref: '#/components/schemas/V4Application'
-        number:
-          description: The number of the current Page. Is always non-negative.
-          type: integer
-          format: int32
-        sort:
-          $ref: '#/components/schemas/SortObject'
-        pageable:
-          $ref: '#/components/schemas/PageableObject'
-        numberOfElements:
-          description: The number of elements currently on this Page.
-          type: integer
-          format: int32
-        empty:
-          description: Whether the current Page is empty.
-          type: boolean
     V4Application:
       type: object
       properties:
@@ -211,6 +159,18 @@ components:
           description: The most recent time an Assess or Protect agent observed activity for this application or it was scanned by SCA.
           format: date-time
       description: Represents a single executable component that can be instrumented or otherwise assessed for security vulnerabilities.
+    SortObject:
+      type: object
+      properties:
+        empty:
+          description: True if the request had no sort parameters defined.
+          type: boolean
+        unsorted:
+          description: True if this response is not sorted.
+          type: boolean
+        sorted:
+          description: True if this response is sorted.
+          type: boolean
     PageableObject:
       type: object
       properties:
@@ -235,6 +195,46 @@ components:
           description: The current page number.
           type: integer
           format: int32
+    PageV4Application:
+      type: object
+      properties:
+        totalElements:
+          description: The toal number of Elements.
+          type: integer
+          format: int64
+        totalPages:
+          description: The toal number of Pages.
+          type: integer
+          format: int32
+        first:
+          description: Whether the current Page is the first one.
+          type: boolean
+        last:
+          description: Whether the current Page is the last one.
+          type: boolean
+        size:
+          description: The size of the Page.
+          type: integer
+          format: int32
+        content:
+          type: array
+          items:
+            $ref: '#/components/schemas/V4Application'
+        number:
+          description: The number of the current Page. Is always non-negative.
+          type: integer
+          format: int32
+        sort:
+          $ref: '#/components/schemas/SortObject'
+        pageable:
+          $ref: '#/components/schemas/PageableObject'
+        numberOfElements:
+          description: The number of elements currently on this Page.
+          type: integer
+          format: int32
+        empty:
+          description: Whether the current Page is empty.
+          type: boolean
   responses:
     Forbidden403:
       description: Forbidden

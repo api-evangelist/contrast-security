@@ -1,0 +1,57 @@
+generated: '2026-10-04'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://www.contrastsecurity.com/pricing-and-packaging
+sources:
+- https://www.contrastsecurity.com/pricing-and-packaging
+name: Contrast Security pricing
+audience: business-product
+pricing_basis: flat-platform
+plans:
+- name: Free
+  price_text: $0
+  price: 0
+  description: CVE Shield exploitability monitoring on two applications. No credit card required.
+  features:
+  - 2 applications (unlimited hosts)
+  - CVE Shield runtime monitoring
+  - Runtime SCA with dependency tree
+  - Dynamic scoring to prioritize fixes
+  - 14-day rolling history
+  - Single user
+  - Community support
+  limits:
+  - name: applications
+    limit_text: 2 applications
+  - name: services
+    limit_text: up to 12 services
+- name: Pro
+  price_text: $750 / month
+  price: 750
+  description: Full runtime blocking and monitoring for growing teams.
+  features:
+  - 8 applications (unlimited hosts)
+  - CVE Shield active blocking + runtime monitoring
+  - Block CVE exploitation at runtime before the fix ships
+  - Runtime SCA with dependency tree
+  - Dynamic scoring to prioritize fixes
+  - 90-day rolling history
+  - Up to 5 users
+  - Email support
+  limits:
+  - name: applications
+    limit_text: 8 applications
+  - name: services
+    limit_text: up to 50 services
+- name: Enterprise
+  price_text: Talk to sales for a quote
+  description: Enterprise-scale coverage with SLA guarantees and dedicated support.
+  features:
+  - Full ADR production monitoring and blocking for CVEs and custom code vulnerabilities
+  - SIEM and ticketing integrations
+  - Compliance reporting
+  - 'Enterprise access controls: RBAC, SAML SSO'
+  - 1-year rolling history
+  - Unlimited users
+  - Standard support
+docs: https://www.contrastsecurity.com/pricing-and-packaging

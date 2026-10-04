@@ -1,0 +1,79 @@
+generated: '2026-10-04'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.contrastsecurity.com/en/scan-release-notes-and-archive.html
+sources:
+- https://docs.contrastsecurity.com/en/scan-release-notes-and-archive.html
+- https://docs.contrastsecurity.com/en/integration-release-notes-and-archive.html
+entries:
+- breaking: false
+  highlights:
+  - SCIM 2.0 support for Microsoft Entra ID.
+  - Enterprise organizations can now use Microsoft Entra ID ( Contrast and Northstar ) as an identity provider with the Contrast SCIM API to automate
+    user and group provisioning and deprovisioning.
+  date: '2026-08-18'
+- breaking: false
+  highlights:
+  - JavaScript - Added support for ES6 export default statements.
+  - Java - Improved performance for rule OPT.JAVA.DECLARA.UCC.
+  - RPG - Added support for SORTA(A) and SORTA(D) commands.
+  date: '2026-09-09'
+- breaking: false
+  highlights:
+  - ServiceNow Integration with bidirectional sync.
+  - A ServiceNow integration is now available, enabling bidirectional synchronization between ServiceNow and your platform for seamless data flow
+    across systems.
+  date: '2026-06-16'
+- breaking: false
+  highlights:
+  - Jira integration with issue sync and resource group support.
+  - The Jira integration now supports Issues, offering additional vulnerability reporting to Jira.
+  date: '2026-05-19'
+- breaking: false
+  highlights:
+  - Google SecOps detection rules.
+  - You can now download and import pre-built YARA-L detection and correlation rules for Google Security Operations directly from the Contrast
+    Security ADR GitHub repository.
+  date: '2026-04-30'
+- breaking: false
+  highlights:
+  - 'NEW: Contrast Security bidirectional sync with Jira.'
+  - When Contrast creates security incidents, they now automatically open enriched issues in the right Jira projects with key technical details
+    included.
+  date: '2026-03-19'
+- breaking: false
+  highlights:
+  - Contrast Security ADR integration with Google Security Operations.
+  - This integration sends incidents and attack events from the Contrast Security platform to Google Security Operations via the Logs Ingestion
+    API.
+  date: '2026-02-17'
+- breaking: false
+  highlights:
+  - IntelliJ plugin updates.
+  - The existing IntelliJ plugin has been updated to support the IntelliJ Platform Compatibility Range version 253 and all subsequent minor and
+    patch versions within this major range.
+  date: '2026-01-22'
+- breaking: false
+  highlights:
+  - Contrast Security ADR integration with Datadog®.
+  - This integration allows the Contrast Security ADR platform to send incidents and attack events to Datadog.
+  date: '2025-12-16'
+- breaking: false
+  highlights:
+  - Contrast Security ADR with Splunk enhancement for Northstar.
+  - We have updated our Splunk integration to include support for the Issues data type, in addition to the existing Observations (Attack Events)
+    and Incidents.
+  date: '2025-10-21'
+- breaking: false
+  highlights:
+  - Support for VMware for Tanzu v6.
+  - The Tanzu update enhances security, platform compatibility, and network functionality by upgrading core components to support TAS 6.0, migrating
+    to a modern Ubuntu OS (Jammy Jellyfish 22), and integrating new service proxy capabilities.
+  date: '2025-08-22'
+- breaking: false
+  highlights:
+  - Update VSCode IDE.
+  - The VS Code IDE extension has been enhanced to include comprehensive Software Composition Analysis (SCA) capabilities.
+  date: '2025-08-04'
+note: Versioning scheme and explicit current version are not provided on the pages; fields are set to null.
+docs: https://docs.contrastsecurity.com/en/scan-release-notes-and-archive.html

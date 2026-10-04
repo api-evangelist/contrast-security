@@ -1,0 +1,24 @@
+generated: '2026-10-04'
+method: probed
+generator: harvest-packages.py
+source: registry metadata endpoints (registry.npmjs.org, pypi.org, rubygems.org, api.nuget.org, packagist.org, crates.io) ; github.com/contrastsecurity
+ownership_rule: 'official: true only when the registry metadata (homepage, repository, author, URLs) names the provider''s domain (agentic-access/contrast-security-agentic-access.yml,
+  authentication/contrast-security-authentication.yml, contrastsecurity.com, linkedin.com, security/contrast-security-domain-security.yml, security/contrast-security-vulnerability-disclosure.yml)
+  or its accepted GitHub org (contrastsecurity).'
+packages:
+- name: contrast-security
+  registry: pypi
+  url: https://pypi.org/project/contrast-security/
+  language: Python
+  official: true
+  version: '0.23'
+  published: '2023-01-11'
+  evidence: metadata names contrastsecurity.com
+- name: contrast_security
+  registry: pypi
+  url: https://pypi.org/project/contrast_security/
+  language: Python
+  official: true
+  version: '0.23'
+  published: '2023-01-11'
+  evidence: metadata names contrastsecurity.com

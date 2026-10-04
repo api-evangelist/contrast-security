@@ -1,0 +1,37 @@
+generated: '2026-10-04'
+method: derived
+generator: derive-problem-types.py
+source:
+- openapi/contrast-security-applications-api-openapi.yml
+- openapi/contrast-security-organizations-api-openapi.yml
+- openapi/contrast-security-rules-api-openapi.yml
+- openapi/contrast-security-vulnerabilities-api-openapi.yml
+format: custom
+envelope:
+  media_type: application/json
+  schema: null
+coverage:
+  operations: 8
+  statuses_declared: 3
+problems:
+- status: 401
+  title: Unauthorized
+  description: Unauthorized
+  operations: 8
+  media_types:
+  - application/json
+  schema: null
+- status: 403
+  title: Forbidden
+  description: Forbidden
+  operations: 8
+  media_types:
+  - application/json
+  schema: null
+- status: 404
+  title: Not Found
+  description: Resource not found
+  operations: 2
+  media_types:
+  - application/json
+  schema: null

@@ -1,0 +1,41 @@
+generated: '2026-10-04'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.contrastsecurity.com/en/generic-webhooks.html
+sources:
+- https://docs.contrastsecurity.com/en/generic-webhooks.html
+- https://docs.contrastsecurity.com/en/generic-webhook-variables.html
+- https://docs.contrastsecurity.com/en/attack-events--hosted-customers-.html
+- https://docs.contrastsecurity.com/en/view-attack-events.html
+description: Contrast Security generic webhooks deliver POST messages for listed event types. Deliveries are considered successful when the receiving
+  endpoint returns any 2XX HTTP status code; after 5 consecutive non‑2XX responses the webhook is disconnected.
+events:
+- event: ATTACK_END
+  description: Event ATTACK_END.
+- event: ATTACK_EVENT_COMMENT
+  description: Event ATTACK_EVENT_COMMENT.
+- event: ATTACK_UPDATE
+  description: Event ATTACK_UPDATE.
+- event: EXPIRING_LICENSE
+  description: Event EXPIRING_LICENSE.
+- event: NEW_ASSET
+  description: Event NEW_ASSET.
+- event: NEW_ATTACK_APPLICATION
+  description: Event NEW_ATTACK_APPLICATION.
+- event: NEW_ATTACK_UPDATE
+  description: Event NEW_ATTACK_UPDATE.
+- event: NEW_ATTACK
+  description: Event NEW_ATTACK.
+- event: NEW_VULNERABILITY_COMMENT
+  description: Event NEW_VULNERABILITY_COMMENT.
+- event: NEW_VULNERABILITY
+  description: Event NEW_VULNERABILITY.
+- event: NEW_VULNERABLE_LIBRARY
+  description: Event NEW_VULNERABLE_LIBRARY.
+- event: SERVER_OFFLINE
+  description: Event SERVER_OFFLINE.
+- event: VULNERABILITY_CHANGESTATUS_CLOSED
+  description: Event VULNERABILITY_CHANGESTATUS_CLOSED.
+delivery:
+  retries: up to 5 attempts; after 5 consecutive non‑2XX responses the webhook is disconnected
+docs: https://docs.contrastsecurity.com/en/generic-webhooks.html

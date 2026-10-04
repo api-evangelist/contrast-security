@@ -1,17 +1,15 @@
 aid: contrast-security
+
 name: Contrast Security
-description: >-
-  Contrast Security is an application security platform that uses
-  instrumentation-based agents to provide Interactive Application Security
-  Testing (IAST), Runtime Application Self-Protection (RASP), and Software
-  Composition Analysis (SCA) across Java, .NET, Node.js, Python, PHP, Go,
-  and Ruby applications. The platform identifies, prioritizes, and defends
-  against vulnerabilities and attacks in real time from inside running
-  applications. Contrast's REST API enables programmatic access to
-  TeamServer applications, libraries, vulnerabilities, and traces,
-  authenticated via API key plus Authorization header (Base64 of
-  username:service_key) and an Organization ID.
+
+description: Contrast Security is an application security platform that uses instrumentation-based agents to provide Interactive Application Security
+  Testing (IAST), Runtime Application Self-Protection (RASP), and Software Composition Analysis (SCA) across Java, .NET, Node.js, Python, PHP,
+  Go, and Ruby applications. The platform identifies, prioritizes, and defends against vulnerabilities and attacks in real time from inside running
+  applications. Contrast's REST API enables programmatic access to TeamServer applications, libraries, vulnerabilities, and traces, authenticated
+  via API key plus Authorization header (Base64 of username:service_key) and an Organization ID.
+
 type: Index
+
 deliveryModel:
   model: saas
   license_evidence:
@@ -28,6 +26,7 @@ deliveryModel:
   - repository-not-product
   generated: '2026-09-25'
   method: derived
+
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -41,27 +40,137 @@ accessModel:
   - security
   generated: '2026-09-03'
   method: derived
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/contrast-security.png
+
 tags:
-  - Application Security
-  - AppSec
-  - IAST
-  - RASP
-  - SCA
-  - DevSecOps
-  - Runtime Protection
-url: >-
-  https://raw.githubusercontent.com/api-evangelist/contrast-security/refs/heads/main/apis.yml
+- Application Security
+- AppSec
+- IAST
+- RASP
+- SCA
+- DevSecOps
+- Runtime Protection
+
+url: https://raw.githubusercontent.com/api-evangelist/contrast-security/refs/heads/main/apis.yml
+
 created: '2026-05-11'
+
 modified: '2026-07-12'
+
 specificationVersion: '0.23'
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: No OpenAPI or other machine‑readable contract found on the API host despite probing common spec endpoints.
+  evidence:
+  - url: https://api.contrastsecurity.com/openapi.json
+    status: 200
+  checked: '2026-10-04'
+
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
+- type: TermsOfService
+  url: https://www.contrastsecurity.com/legal-terms
+- type: PrivacyPolicy
+  url: https://www.contrastsecurity.com/privacy-matters
+- type: Support
+  url: https://www.contrastsecurity.com/support
+- type: GettingStarted
+  url: https://docs.contrastsecurity.com/en/getting-started.html
+- type: Postman
+  url: https://www.contrastsecurity.com/postman
+
+common:
+- type: SecurityTxt
+  url: well-known/contrast-security-status-security.txt
+- type: Pricing
+  url: https://www.contrastsecurity.com/pricing-and-packaging
+- type: Plans
+  url: plans/contrast-security-plans-pricing.yml
+- type: Spectral
+  url: rules/contrast-security-rules.yml
+- type: JSONLD
+  url: json-ld/contrast-security-context.jsonld
+- type: Vocabulary
+  url: vocabulary/contrast-security-vocabulary.yml
+- type: Webhooks
+  url: asyncapi/contrast-security-webhooks.yml
+- type: DataModel
+  url: data-model/contrast-security-data-model.yml
+- type: ChangeLog
+  url: changelog/contrast-security-changelog.yml
+- type: Security
+  url: https://www.contrastsecurity.com/disclosure-policy
+- type: ErrorCatalog
+  url: errors/contrast-security-problem-types.yml
+- type: Conformance
+  url: conformance/contrast-security-conformance.yml
+- type: SecurityTxt
+  url: well-known/contrast-security-security.txt
+- type: SecurityTxt
+  url: well-known/contrast-security-contrastsecurity-security.txt
+- type: WellKnown
+  url: well-known/contrast-security-well-known.yml
+- type: Hosts
+  url: hosts/contrast-security-hosts.yml
+- type: Vendors
+  url: vendors/contrast-security-vendors.yml
+- type: SDKs
+  url: packages/contrast-security-packages.yml
+- type: Packages
+  url: packages/contrast-security-packages.yml
+- type: TrustCenter
+  url: https://trust.contrastsecurity.com/
+- type: Support
+  url: https://support.contrastsecurity.com/hc/en-us
+- type: StatusPage
+  url: https://status.contrastsecurity.com/
+- type: Newsroom
+  url: https://www.contrastsecurity.com/press/new-contrast-security-report-finds
+- type: Login
+  url: https://cs004.contrastsecurity.com/login
+- type: GettingStarted
+  url: https://docs.contrastsecurity.com/en/java-quick-start-guide.html
+- type: DeveloperPortal
+  url: https://docs.contrastsecurity.jp/index.html?lang=ja
+- type: GitHubOrganization
+  url: https://github.com/contrastsecurity
+- type: AgenticAccess
+  url: agentic-access/contrast-security-agentic-access.yml
+- type: VulnerabilityDisclosure
+  url: security/contrast-security-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/contrast-security-domain-security.yml
+- type: Authentication
+  url: authentication/contrast-security-authentication.yml
+- type: LinkedIn
+  url: https://www.linkedin.com/company/contrast-security
+- type: Website
+  url: https://www.contrastsecurity.com
+- type: Documentation
+  url: https://docs.contrastsecurity.com
+- type: API Docs
+  url: https://api.contrastsecurity.com/
+- type: LlmsText
+  url: https://api.contrastsecurity.com/llms.txt
+- url: https://www.contrastsecurity.com/security-influencers/rss.xml
+  type: Blog
+- name: MCP Server
+  url: https://app.contrastsecurity.com/mcp
+  type: MCPServer
+- name: MCP Server Source
+  url: https://github.com/Contrast-Security-OSS/mcp-contrast
+  type: MCPServer
+
 apis:
 - aid: contrast-security:rest-api
   name: Contrast TeamServer REST API
-  description: >-
-    REST API for interacting with Contrast TeamServer to manage applications, libraries, vulnerabilities,
-    traces, servers, agents, and organization settings. Requires an API key, Authorization header formed
-    as Base64(username:service_key), and the Organization ID in the request path.
+  description: REST API for interacting with Contrast TeamServer to manage applications, libraries, vulnerabilities, traces, servers, agents,
+    and organization settings. Requires an API key, Authorization header formed as Base64(username:service_key), and the Organization ID in the
+    request path.
   humanURL: https://api.contrastsecurity.com/
   baseURL: https://app.contrastsecurity.com/Contrast/api/ng
   tags:
@@ -81,10 +190,8 @@ apis:
     url: https://docs.contrastsecurity.com/en/personal-keys.html
 - aid: contrast-security:contrast-security-applications-api
   name: Contrast Security Applications API
-  description: >-
-    An application represents an executable unit of code that can be instrumented at runtime by an agent
-    in Contrast. This can be a web app, microservice, or other runnable code and any dependencies included
-    in its executable, packaged form.
+  description: An application represents an executable unit of code that can be instrumented at runtime by an agent in Contrast. This can be a
+    web app, microservice, or other runnable code and any dependencies included in its executable, packaged form.
   humanURL: https://api.contrastsecurity.com/
   baseURL: https://app.contrastsecurity.com/Contrast/api/ng
   tags:
@@ -94,6 +201,10 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/contrast-security-applications-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/contrast-security-v4-application-schema.json
+  - type: JSONSchema
+    url: json-schema/contrast-security-page-v4-application-schema.json
 - aid: contrast-security:contrast-security-organizations-api
   name: Contrast Security Organizations API
   description: An organization represents a grouping of user accounts in Contrast.
@@ -106,11 +217,12 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/contrast-security-organizations-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/contrast-security-v4-organization-schema.json
 - aid: contrast-security:contrast-security-rules-api
   name: Contrast Security Rules API
-  description: >-
-    A rule defines a data flow pattern used to categorize vulnerability and attack types. Some common
-    rules are sql-injection, ssrf, and reflected-xss.
+  description: A rule defines a data flow pattern used to categorize vulnerability and attack types. Some common rules are sql-injection, ssrf,
+    and reflected-xss.
   humanURL: https://api.contrastsecurity.com/
   baseURL: https://app.contrastsecurity.com/Contrast/api/ng
   tags:
@@ -118,11 +230,11 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/contrast-security-rules-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/contrast-security-v4-rule-schema.json
 - aid: contrast-security:contrast-security-vulnerabilities-api
   name: Contrast Security Vulnerabilities API
-  description: >-
-    Vulnerabilities detected in runtime by Contrast Assess are weaknesses in the application code that
-    allow an attacker to cause harm.
+  description: Vulnerabilities detected in runtime by Contrast Assess are weaknesses in the application code that allow an attacker to cause harm.
   humanURL: https://api.contrastsecurity.com/
   baseURL: https://app.contrastsecurity.com/Contrast/api/ng
   tags:
@@ -130,37 +242,11 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/contrast-security-vulnerabilities-api-openapi.yml
-common:
-  - type: AgenticAccess
-    url: agentic-access/contrast-security-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/contrast-security-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/contrast-security-domain-security.yml
-  - type: Authentication
-    url: authentication/contrast-security-authentication.yml
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/contrast-security
-  - type: Website
-    url: https://www.contrastsecurity.com
-  - type: Documentation
-    url: https://docs.contrastsecurity.com
-  - type: API Docs
-    url: https://api.contrastsecurity.com/
-  - type: Pricing
-    url: https://www.contrastsecurity.com/contact-sales
-  - type: Signup
-    url: https://www.contrastsecurity.com/contrast-free-tools
-  - type: LlmsText
-    url: https://api.contrastsecurity.com/llms.txt
-  - url: https://www.contrastsecurity.com/security-influencers/rss.xml
-    type: Blog
-  - name: MCP Server
-    url: https://app.contrastsecurity.com/mcp
-    type: MCPServer
-  - name: MCP Server Source
-    url: https://github.com/Contrast-Security-OSS/mcp-contrast
-    type: MCPServer
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+  - type: JSONSchema
+    url: json-schema/contrast-security-v4-vulnerability-schema.json
+x-enrichment:
+  date: '2026-10-04'
+  status: enriched
+  artifacts_added: 32
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
