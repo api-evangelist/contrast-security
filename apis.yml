@@ -1,15 +1,13 @@
 aid: contrast-security
-
 name: Contrast Security
-
-description: Contrast Security is an application security platform that uses instrumentation-based agents to provide Interactive Application Security
-  Testing (IAST), Runtime Application Self-Protection (RASP), and Software Composition Analysis (SCA) across Java, .NET, Node.js, Python, PHP,
-  Go, and Ruby applications. The platform identifies, prioritizes, and defends against vulnerabilities and attacks in real time from inside running
-  applications. Contrast's REST API enables programmatic access to TeamServer applications, libraries, vulnerabilities, and traces, authenticated
-  via API key plus Authorization header (Base64 of username:service_key) and an Organization ID.
-
+description: Contrast Security is an application security platform that uses instrumentation-based agents
+  to provide Interactive Application Security Testing (IAST), Runtime Application Self-Protection (RASP),
+  and Software Composition Analysis (SCA) across Java, .NET, Node.js, Python, PHP, Go, and Ruby applications.
+  The platform identifies, prioritizes, and defends against vulnerabilities and attacks in real time from
+  inside running applications. Contrast's REST API enables programmatic access to TeamServer applications,
+  libraries, vulnerabilities, and traces, authenticated via API key plus Authorization header (Base64
+  of username:service_key) and an Organization ID.
 type: Index
-
 deliveryModel:
   model: saas
   license_evidence:
@@ -26,7 +24,6 @@ deliveryModel:
   - repository-not-product
   generated: '2026-09-25'
   method: derived
-
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -40,9 +37,7 @@ accessModel:
   - security
   generated: '2026-09-03'
   method: derived
-
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/contrast-security.png
-
 tags:
 - Application Security
 - AppSec
@@ -51,24 +46,19 @@ tags:
 - SCA
 - DevSecOps
 - Runtime Protection
-
 url: https://raw.githubusercontent.com/api-evangelist/contrast-security/refs/heads/main/apis.yml
-
 created: '2026-05-11'
-
 modified: '2026-07-12'
-
 specificationVersion: '0.23'
-
 x-coverage:
   state: unreadable
   reason: no-machine-readable-spec
-  detail: No OpenAPI or other machine‑readable contract found on the API host despite probing common spec endpoints.
+  detail: No OpenAPI or other machine‑readable contract found on the API host despite probing common spec
+    endpoints.
   evidence:
   - url: https://api.contrastsecurity.com/openapi.json
     status: 200
   checked: '2026-10-04'
-
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -82,7 +72,6 @@ maintainers:
   url: https://docs.contrastsecurity.com/en/getting-started.html
 - type: Postman
   url: https://www.contrastsecurity.com/postman
-
 common:
 - type: SecurityTxt
   url: well-known/contrast-security-status-security.txt
@@ -164,13 +153,19 @@ common:
 - name: MCP Server Source
   url: https://github.com/Contrast-Security-OSS/mcp-contrast
   type: MCPServer
-
+- type: CapabilityMap
+  url: capabilities/contrast-security-capability-edges.yml
+  name: Contrast Security Business Capability Map
+- type: Pricing
+  url: https://www.contrastsecurity.com/contact-sales
+- type: Signup
+  url: https://www.contrastsecurity.com/contrast-free-tools
 apis:
 - aid: contrast-security:rest-api
   name: Contrast TeamServer REST API
-  description: REST API for interacting with Contrast TeamServer to manage applications, libraries, vulnerabilities, traces, servers, agents,
-    and organization settings. Requires an API key, Authorization header formed as Base64(username:service_key), and the Organization ID in the
-    request path.
+  description: REST API for interacting with Contrast TeamServer to manage applications, libraries, vulnerabilities,
+    traces, servers, agents, and organization settings. Requires an API key, Authorization header formed
+    as Base64(username:service_key), and the Organization ID in the request path.
   humanURL: https://api.contrastsecurity.com/
   baseURL: https://app.contrastsecurity.com/Contrast/api/ng
   tags:
@@ -190,8 +185,9 @@ apis:
     url: https://docs.contrastsecurity.com/en/personal-keys.html
 - aid: contrast-security:contrast-security-applications-api
   name: Contrast Security Applications API
-  description: An application represents an executable unit of code that can be instrumented at runtime by an agent in Contrast. This can be a
-    web app, microservice, or other runnable code and any dependencies included in its executable, packaged form.
+  description: An application represents an executable unit of code that can be instrumented at runtime
+    by an agent in Contrast. This can be a web app, microservice, or other runnable code and any dependencies
+    included in its executable, packaged form.
   humanURL: https://api.contrastsecurity.com/
   baseURL: https://app.contrastsecurity.com/Contrast/api/ng
   tags:
@@ -221,8 +217,8 @@ apis:
     url: json-schema/contrast-security-v4-organization-schema.json
 - aid: contrast-security:contrast-security-rules-api
   name: Contrast Security Rules API
-  description: A rule defines a data flow pattern used to categorize vulnerability and attack types. Some common rules are sql-injection, ssrf,
-    and reflected-xss.
+  description: A rule defines a data flow pattern used to categorize vulnerability and attack types. Some
+    common rules are sql-injection, ssrf, and reflected-xss.
   humanURL: https://api.contrastsecurity.com/
   baseURL: https://app.contrastsecurity.com/Contrast/api/ng
   tags:
@@ -234,7 +230,8 @@ apis:
     url: json-schema/contrast-security-v4-rule-schema.json
 - aid: contrast-security:contrast-security-vulnerabilities-api
   name: Contrast Security Vulnerabilities API
-  description: Vulnerabilities detected in runtime by Contrast Assess are weaknesses in the application code that allow an attacker to cause harm.
+  description: Vulnerabilities detected in runtime by Contrast Assess are weaknesses in the application
+    code that allow an attacker to cause harm.
   humanURL: https://api.contrastsecurity.com/
   baseURL: https://app.contrastsecurity.com/Contrast/api/ng
   tags:
