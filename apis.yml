@@ -131,6 +131,9 @@ apis:
   - type: OpenAPI
     url: openapi/contrast-security-vulnerabilities-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/contrast-security-capability-edges.yml
+    name: Contrast Security Business Capability Map
   - type: AgenticAccess
     url: agentic-access/contrast-security-agentic-access.yml
   - type: VulnerabilityDisclosure
