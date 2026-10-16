@@ -1,0 +1,55 @@
+# Kin Score artifact — contrast-security — 2026-10-11T110117
+# The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
+---
+kin_score:
+  slug: contrast-security
+  schema_version: 0.23.0
+  scored_at: '2026-10-11'
+  run_ts: 2026-10-11T110117
+  composite: 64.8
+  band: strong
+  facets:
+    discoverability: 76.7
+    contract_quality: 69.2
+    contract_governance: 79.1
+    operational_transparency: 55.3
+    developer_ergonomics: 57.1
+    access_clarity: 49.5
+  agent_readiness:
+    score: 55.8
+    band: agent-ready
+    band_gated_from: agent-native
+    dimensions:
+      spec_presence: true
+      agentic_access: derived
+      reversibility_documented: na
+      mcp_server: verified
+      auth_clarity: served
+      idempotency: na
+      error_semantics: derived
+      openapi_examples: verified
+      rate_limit_signal: false
+      event_surface_described: unknown
+      agent_skills: false
+      well_known_catalog: false
+      consent_identity: false
+      agent_card: false
+      dry_run_mode: na
+      delegated_identity: served
+      protected_resource_metadata: false
+      dynamic_client_registration: true
+      agentic_commerce: false
+  regulatory:
+    applies: true
+    regime: Horizontal (data, software, accessibility, platform)
+    regime_id: horizontal
+    score: 27.5
+    matched_via: fallback
+  provenance:
+    mcp: first-party
+    agentic_access: derived
+    contracts:
+      total: 4
+      derived: 0
+      coverage: 0.0
+      callable: 0.0
