@@ -43,6 +43,14 @@ tags:
 - AppSec
 - IAST
 - RASP
+- Software Composition Analysis
+- DevSecOps
+- Runtime Protection
+tags_raw:
+- Application Security
+- AppSec
+- IAST
+- RASP
 - SCA
 - DevSecOps
 - Runtime Protection
@@ -169,6 +177,12 @@ apis:
   humanURL: https://api.contrastsecurity.com/
   baseURL: https://app.contrastsecurity.com/Contrast/api/ng
   tags:
+  - Application Security
+  - IAST
+  - RASP
+  - Software Composition Analysis
+  - Vulnerabilities
+  tags_raw:
   - Application Security
   - IAST
   - RASP
