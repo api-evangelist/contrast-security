@@ -155,5 +155,5 @@
     - connectors/applications/contrast-security
     vendor_link: https://www.contrastsecurity.com/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
