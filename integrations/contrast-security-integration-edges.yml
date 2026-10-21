@@ -15,6 +15,8 @@ checked:
 - https://www.openchainproject.org/community-of-conformance
 - microsoft-sentinel/integrations/microsoft-sentinel-integration-edges.yml
 - splunk/integrations/splunk-integration-edges.yml
+- jetbrains/integrations/jetbrains-integration-edges.yml
+- vs-code-marketplace/integrations/vs-code-marketplace-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -87,6 +89,61 @@ edges:
   - Verified creator
   detected_by: sweep-devtools.py
   detected: '2026-10-14'
+- partner_name: CycloneDX (OWASP)
+  partner: null
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  category: SBOM standard (CycloneDX)
+  evidence: https://cyclonedx.org/tool-center/#toolCard-contrast_security
+  contract_reference:
+    register: CycloneDX Tool Center (cyclonedx.org/tool-center)
+    standard: CycloneDX (ECMA-424)
+    spec_file: null
+    role: cyclonedx-tool
+    registered_name: Contrast Security
+    tools:
+    - Contrast Security
+    website: https://www.contrastsecurity.com/
+    matched_domain: contrastsecurity.com
+    matched_by: domain
+    availability:
+    - COMMERCIAL_LICENSE
+    - SUBSCRIPTION
+    signal_note: 'participation only: a Tool Center listing means the publisher ships CycloneDX support; tools,
+      capabilities and their count are context, never read (breadth is not credit)'
+    detected_by: sweep-software-supply-chain.py
+    detected: '2026-10-18'
+  detected_by: sweep-software-supply-chain.py
+  first_seen: '2026-10-18'
+- partner_name: Fivetran
+  partner: fivetran
+  partner_match: aggregator
+  type: marketplace
+  marketplace: fivetran-connectors
+  channel: elt-connector
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://fivetran.com/docs/connectors/applications/contrast-security
+  category: null
+  contract_reference:
+    register: Fivetran connectors (fivetran.com/docs/connectors, docs-sitemap.xml + Partner-Built program)
+    spec_file: null
+    role: elt-connector:fivetran
+    registered_name: Contrast Security
+    matched_domain: contrastsecurity.com
+    matched_by: domain
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    connector_paths:
+    - connectors/applications/contrast-security
+    vendor_link: https://www.contrastsecurity.com/
+    builder: Fivetran
+  detected_by: sweep-data-integration.py
+  first_seen: '2026-10-18'
 - partner_name: CrowdStrike (own)
   partner: crowdstrike
   partner_match: mirror
@@ -203,61 +260,45 @@ edges:
   detected: '2026-10-14'
   detected_by: mirror-platform-listings.py
   category: app
-- partner_name: CycloneDX (OWASP)
-  partner: null
-  partner_match: register
-  type: register
-  channel: standard-directory
-  relationship: standard-participant
-  direction: partner-built
-  category: SBOM standard (CycloneDX)
-  evidence: https://cyclonedx.org/tool-center/#toolCard-contrast_security
-  contract_reference:
-    register: CycloneDX Tool Center (cyclonedx.org/tool-center)
-    standard: CycloneDX (ECMA-424)
-    spec_file: null
-    role: cyclonedx-tool
-    registered_name: Contrast Security
-    tools:
-    - Contrast Security
-    website: https://www.contrastsecurity.com/
-    matched_domain: contrastsecurity.com
-    matched_by: domain
-    availability:
-    - COMMERCIAL_LICENSE
-    - SUBSCRIPTION
-    signal_note: 'participation only: a Tool Center listing means the publisher ships CycloneDX support; tools,
-      capabilities and their count are context, never read (breadth is not credit)'
-    detected_by: sweep-software-supply-chain.py
-    detected: '2026-10-18'
-  detected_by: sweep-software-supply-chain.py
-  first_seen: '2026-10-18'
-- partner_name: Fivetran
-  partner: fivetran
-  partner_match: aggregator
+- partner_name: JetBrains (jetbrains-marketplace)
+  partner: jetbrains
+  partner_match: mirror
+  mirror_match: domain
   type: marketplace
-  marketplace: fivetran-connectors
-  channel: elt-connector
-  relationship: ipaas-bridge
+  relationship: platform-app
   direction: third-party
-  evidence: https://fivetran.com/docs/connectors/applications/contrast-security
-  category: null
-  contract_reference:
-    register: Fivetran connectors (fivetran.com/docs/connectors, docs-sitemap.xml + Partner-Built program)
-    spec_file: null
-    role: elt-connector:fivetran
-    registered_name: Contrast Security
-    matched_domain: contrastsecurity.com
-    matched_by: domain
-    detected_by: sweep-data-integration.py
-    detected: '2026-10-18'
-    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
-    connector_paths:
-    - connectors/applications/contrast-security
-    vendor_link: https://www.contrastsecurity.com/
-    builder: Fivetran
-  detected_by: sweep-data-integration.py
-  first_seen: '2026-10-18'
+  channel: partner-built
+  marketplace: jetbrains-marketplace
+  evidence: https://plugins.jetbrains.com/vendor/contrast-security
+  mirror_of: jetbrains/integrations/jetbrains-integration-edges.yml
+  apps:
+  - Contrast IDE
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: IDE / developer extension marketplace listing
+  badges:
+  - Verified vendor
+- partner_name: VS Code Marketplace (vs-code-marketplace)
+  partner: vs-code-marketplace
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: vs-code-marketplace
+  evidence: https://marketplace.visualstudio.com/publishers/ContrastSecurityIDE
+  mirror_of: vs-code-marketplace/integrations/vs-code-marketplace-integration-edges.yml
+  apps:
+  - Contrast IDE
+  listing_count: 1
+  detected: '2026-10-20'
+  detected_by: mirror-platform-listings.py
+  category: IDE / developer extension marketplace listing
+  badges:
+  - Verified publisher
+  - Verified domain
 source:
 - https://github.com/marketplace?type=actions
 - https://github.com/marketplace?type=apps

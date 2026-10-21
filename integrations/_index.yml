@@ -51,57 +51,6 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: contrast-security-crowdstrike-own
-  label: CrowdStrike (own)
-  partner: crowdstrike
-  partner_name: CrowdStrike (own)
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.crowdstrike.com/listings/contrast-security-application-detection-and-response-data-connector/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: contrast-security-datadog-own
-  label: Datadog (own)
-  partner: datadog
-  partner_name: Datadog (own)
-  category: Security
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://github.com/DataDog/integrations-extras/tree/master/contrast_security_adr
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: contrast-security-microsoft-sentinel-own
-  label: Microsoft Sentinel (own)
-  partner: microsoft-sentinel
-  partner_name: Microsoft Sentinel (own)
-  category: Security - Threat Protection
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/Contrast%20Protect
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: contrast-security-splunk-own
-  label: Splunk (own)
-  partner: splunk
-  partner_name: Splunk (own)
-  category: app
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://splunkbase.splunk.com/app/7734/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: contrast-security-cyclonedx-owasp
   label: CycloneDX (OWASP)
   partner_name: CycloneDX (OWASP)
@@ -155,5 +104,82 @@
     - connectors/applications/contrast-security
     vendor_link: https://www.contrastsecurity.com/
     builder: Fivetran
+  status: not-a-workflow
+  arazzo: null
+- slug: contrast-security-crowdstrike-own
+  label: CrowdStrike (own)
+  partner: crowdstrike
+  partner_name: CrowdStrike (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.crowdstrike.com/listings/contrast-security-application-detection-and-response-data-connector/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: contrast-security-datadog-own
+  label: Datadog (own)
+  partner: datadog
+  partner_name: Datadog (own)
+  category: Security
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://github.com/DataDog/integrations-extras/tree/master/contrast_security_adr
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: contrast-security-microsoft-sentinel-own
+  label: Microsoft Sentinel (own)
+  partner: microsoft-sentinel
+  partner_name: Microsoft Sentinel (own)
+  category: Security - Threat Protection
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://github.com/Azure/Azure-Sentinel/tree/master/Solutions/Contrast%20Protect
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: contrast-security-splunk-own
+  label: Splunk (own)
+  partner: splunk
+  partner_name: Splunk (own)
+  category: app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://splunkbase.splunk.com/app/7734/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: contrast-security-jetbrains-jetbrains-marketplace
+  label: JetBrains (jetbrains-marketplace)
+  partner: jetbrains
+  partner_name: JetBrains (jetbrains-marketplace)
+  category: IDE / developer extension marketplace listing
+  type: marketplace
+  marketplace: jetbrains-marketplace
+  channel: partner-built
+  evidence: https://plugins.jetbrains.com/vendor/contrast-security
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: contrast-security-vs-code-marketplace-vs-code-marketplace
+  label: VS Code Marketplace (vs-code-marketplace)
+  partner: vs-code-marketplace
+  partner_name: VS Code Marketplace (vs-code-marketplace)
+  category: IDE / developer extension marketplace listing
+  type: marketplace
+  marketplace: vs-code-marketplace
+  channel: partner-built
+  evidence: https://marketplace.visualstudio.com/publishers/ContrastSecurityIDE
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
