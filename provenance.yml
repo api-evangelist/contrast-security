@@ -6,8 +6,17 @@ artifacts:
   agentic-access/contrast-security-agentic-access.yml:
     method: generated
     evidence: declared in the artifact
+  asyncapi/contrast-security-webhooks.yml:
+    method: searched
+    evidence: declared in the artifact
   authentication/contrast-security-authentication.yml:
     method: derived
+    evidence: declared in the artifact
+  capabilities/contrast-security-capability-edges.yml:
+    method: unknown
+    evidence: no authorship recorded
+  changelog/contrast-security-changelog.yml:
+    method: searched
     evidence: declared in the artifact
   collections/contrast-security-applications-api.opencollection.json:
     method: derived
@@ -39,130 +48,46 @@ artifacts:
   collections/contrast-security.postman_collection.json:
     method: derived
     evidence: openapi/contrast-security
+  conformance/contrast-security-conformance.yml:
+    method: derived
+    evidence: declared in the artifact
+  data-model/contrast-security-data-model.yml:
+    method: derived
+    evidence: declared in the artifact
+  errors/contrast-security-problem-types.yml:
+    method: derived
+    evidence: declared in the artifact
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
+  hosts/contrast-security-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
+  integrations/_index.yml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T125852.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T133943.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T143147.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T154045.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-26T215308.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T094438.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T103455.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T123021.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T132314.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T140727.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-28T221322.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T213958.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T230545.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T203505.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T220315.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-31T223420.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T063623.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T210448.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T222808.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T224043.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T161828.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T174231.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T062714.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T212454.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T224856.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T055819.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T072335.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T144739.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T195450.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T211839.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T011047.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T224210.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T200636.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T213054.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T214843.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T232836.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T204815.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T222408.yml:
+    evidence: carries an API Evangelist house phrase
+  integrations/contrast-security-integration-edges.yml:
+    method: searched
+    evidence: declared in the artifact
+  json-ld/contrast-security-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/contrast-security-page-v4-application-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/contrast-security-v4-application-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/contrast-security-v4-organization-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/contrast-security-v4-rule-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/contrast-security-v4-vulnerability-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-12T062655.yml:
@@ -246,6 +171,21 @@ artifacts:
   kin/score-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   llms/contrast-security-llms-probe.yml:
     method: searched
     evidence: 'derive-llms-provenance.py: harvested'
@@ -268,9 +208,72 @@ artifacts:
   openapi/contrast-security-vulnerabilities-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+  overlays/contrast-security-applications-api-overlay.yml:
+    method: unknown
+    evidence: no authorship recorded
+  packages/contrast-security-packages.yml:
+    method: unknown
+    evidence: no authorship recorded
+  plans/contrast-security-plans-pricing.yml:
+    method: searched
+    evidence: declared in the artifact
+  regulatory/contrast-security-regulatory-posture.yml:
+    method: unknown
+    evidence: no authorship recorded
+  rules/contrast-security-rules.yml:
+    method: generated
+    evidence: declared in the artifact
   security/contrast-security-domain-security.yml:
     method: unknown
     evidence: no authorship recorded
   security/contrast-security-vulnerability-disclosure.yml:
     method: searched
     evidence: declared in the artifact
+  vendors/contrast-security-vendors.yml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/contrast-security-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
+  well-known/contrast-security-app-oauth-authorization-server.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-app-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-contrastsecurity-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-cs001-oauth-authorization-server.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-cs001-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-cs002-oauth-authorization-server.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-cs002-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-cs003-oauth-authorization-server.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-cs003-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-cs004-oauth-authorization-server.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-cs004-openid-configuration.json:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-status-security.txt:
+    method: unknown
+    evidence: no authorship recorded
+  well-known/contrast-security-well-known.yml:
+    method: unknown
+    evidence: no authorship recorded
